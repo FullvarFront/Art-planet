@@ -1,0 +1,12 @@
+:root {
+  --main-fonts: "PTSans", sans-serif;
+  --second-fonts: "Poppins", sans-serif;
+  --white: #ffffff;
+  --black: #333333;
+  --gray: #6f6f6f;
+  --blue: #2272eb;
+  --yellow: #ffd542;
+  --weight-bold: 700;
+  --weight-medium: 500;
+  --main-weight: 400;
+}
