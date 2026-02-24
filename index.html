@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variable.css" />
     <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/modal-calculator.css" />
   </head>
   <body class="body">
     <div class="tagline">
@@ -59,14 +62,23 @@
           </ul>
         </nav>
         <div class="header__contacts">
-          <p class="header__address">
-            Москва
-            <img
-              src="./svg/arrow_down.svg"
-              alt="стрелка вниз"
-              class="svg__arrow-down-address"
-            />
-          </p>
+          <div class="header__address">
+            <div class="city-current__select" id="currentCity">
+              <span class="selected__city" id="selectedCity">Москва</span>
+              <img
+                src="./svg/arrow_down.svg"
+                alt="стрелка вниз"
+                class="svg__arrow-down-address"
+                id="cityArrow"
+              />
+            </div>
+            <ul class="city-selector__dropdown" id="cityDropdown">
+              <li data-city="Москва">Москва</li>
+              <li data-city="Питер">Санкт-Петербург</li>
+              <li data-city="Казань">Казань</li>
+              <li data-city="Новосибирск">Новосибирск</li>
+            </ul>
+          </div>
           <a href="tel:+7 495 668-64-32" class="header__phone"
             >+7 495 668-64-32</a
           >
@@ -81,73 +93,266 @@
     <main class="main">
       <section class="main-hero">
         <div class="container">
-          <div class="main-hero__column">
-            <div class="main-hero__info">
-              <h1 class="hero__title">VDS по цене виртуального хостинга</h1>
-              <ul class="hero__server-info">
-                <li class="hero__server-info-item">
-                  <img
-                    src="/svg/bx-check.svg.svg"
-                    alt="check"
-                    class="svg__check"
-                  />
-                  Передовая технология виртуализации KVM и OpenVZ
-                </li>
-                <li class="hero__server-info-item">
-                  <img
-                    src="/svg/bx-check.svg.svg"
-                    alt="check"
-                    class="svg__check"
-                  />
-                  “Честные” гарантированные ресурсы
-                </li>
-                <li class="hero__server-info-item">
-                  <img
-                    src="/svg/bx-check.svg.svg"
-                    alt="check"
-                    class="svg__check"
-                  />
-                  Операционная система Linux/Windows
-                </li>
-                <li class="hero__server-info-item">
-                  <img
-                    src="/svg/bx-check.svg.svg"
-                    alt="check"
-                    class="svg__check"
-                  />
-                  Выделенный IP–адрес
-                </li>
-                <li class="hero__server-info-item">
-                  <img
-                    src="/svg/bx-check.svg.svg"
-                    alt="check"
-                    class="svg__check"
-                  />
-                  "root" — доступ для администратора
-                </li>
-              </ul>
-              <div class="hero__configuration-selection">
-                <a href="#" class="button__selection-configuration">
-                  Выбрать конфигурацию
-                </a>
-                <div class="configuration__price">От 250 ₽ в месяц</div>
+          <div class="main-hero__slider-container">
+            <div class="main-hero__slide active">
+              <div class="main-hero__column">
+                <div class="main-hero__info">
+                  <h1 class="hero__title">VDS по цене виртуального хостинга</h1>
+                  <ul class="hero__server-info">
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Передовая технология виртуализации KVM и OpenVZ
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      “Честные” гарантированные ресурсы
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Операционная система Linux/Windows
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Выделенный IP–адрес
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      "root" — доступ для администратора
+                    </li>
+                  </ul>
+                  <div class="hero__configuration-selection">
+                    <a href="#tariffs" class="button__selection-configuration">
+                      Выбрать конфигурацию
+                    </a>
+                    <div class="configuration__price">От 250 ₽ в месяц</div>
+                  </div>
+                </div>
+                <img
+                  src="./images/data_server.png"
+                  alt="база данных"
+                  class="main-hero__img"
+                />
               </div>
             </div>
-            <img
-              src="./images/data_server.png"
-              alt="база данных"
-              class="main-hero__img"
-            />
+            <div class="main-hero__slide">
+              <div class="main-hero__column">
+                <div class="main-hero__info">
+                  <h1 class="hero__title">VDS по цене виртуального хостинга</h1>
+                  <ul class="hero__server-info">
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Передовая технология виртуализации KVM и OpenVZ
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      “Честные” гарантированные ресурсы
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Операционная система Linux/Windows
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Выделенный IP–адрес
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      "root" — доступ для администратора
+                    </li>
+                  </ul>
+                  <div class="hero__configuration-selection">
+                    <a href="#tariffs" class="button__selection-configuration">
+                      Выбрать конфигурацию
+                    </a>
+                    <div class="configuration__price">От 250 ₽ в месяц</div>
+                  </div>
+                </div>
+                <img
+                  src="./images/data_server.png"
+                  alt="база данных"
+                  class="main-hero__img"
+                />
+              </div>
+            </div>
+            <div class="main-hero__slide">
+              <div class="main-hero__column">
+                <div class="main-hero__info">
+                  <h1 class="hero__title">VDS по цене виртуального хостинга</h1>
+                  <ul class="hero__server-info">
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Передовая технология виртуализации KVM и OpenVZ
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      “Честные” гарантированные ресурсы
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Операционная система Linux/Windows
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Выделенный IP–адрес
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      "root" — доступ для администратора
+                    </li>
+                  </ul>
+                  <div class="hero__configuration-selection">
+                    <a href="#tariffs" class="button__selection-configuration">
+                      Выбрать конфигурацию
+                    </a>
+                    <div class="configuration__price">От 250 ₽ в месяц</div>
+                  </div>
+                </div>
+                <img
+                  src="./images/data_server.png"
+                  alt="база данных"
+                  class="main-hero__img"
+                />
+              </div>
+            </div>
+            <div class="main-hero__slide">
+              <div class="main-hero__column">
+                <div class="main-hero__info">
+                  <h1 class="hero__title">VDS по цене виртуального хостинга</h1>
+                  <ul class="hero__server-info">
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Передовая технология виртуализации KVM и OpenVZ
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      “Честные” гарантированные ресурсы
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Операционная система Linux/Windows
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      Выделенный IP–адрес
+                    </li>
+                    <li class="hero__server-info-item">
+                      <img
+                        src="/svg/bx-check.svg.svg"
+                        alt="check"
+                        class="svg__check"
+                      />
+                      "root" — доступ для администратора
+                    </li>
+                  </ul>
+                  <div class="hero__configuration-selection">
+                    <a href="#tariffs" class="button__selection-configuration">
+                      Выбрать конфигурацию
+                    </a>
+                    <div class="configuration__price">От 250 ₽ в месяц</div>
+                  </div>
+                </div>
+                <img
+                  src="./images/data_server.png"
+                  alt="база данных"
+                  class="main-hero__img"
+                />
+              </div>
+            </div>
           </div>
           <ul class="main-hero__circle-list">
+            <li
+              class="circle__list-item circle__list-item-full active-dot"
+            ></li>
             <li class="circle__list-item circle__list-item-empty"></li>
-            <li class="circle__list-item circle__list-item-full"></li>
-            <li class="circle__list-item circle__list-item-full"></li>
-            <li class="circle__list-item circle__list-item-full"></li>
+            <li class="circle__list-item circle__list-item-empty"></li>
+            <li class="circle__list-item circle__list-item-empty"></li>
           </ul>
+
+          <button class="slider-arrow prev" aria-label="Предыдущий слайд">
+            ‹
+          </button>
+          <button class="slider-arrow next" aria-label="Следующий слайд">
+            ›
+          </button>
         </div>
       </section>
-      <section class="server__types">
+      <section id="tariffs" class="server__types">
         <div class="container">
           <ul class="server__types-card__list">
             <li class="server__types-card__list-item">
@@ -157,7 +362,12 @@
                 возможности и преимущества физического выделенного сервера
               </p>
               <p class="server__types-card__price">от 250 ₽</p>
-              <a href="#" class="server__types-card__more-details">Подробнее</a>
+              <a
+                href="#"
+                class="server__types-card__more-details"
+                data-tariff="virtual"
+                >Подробнее</a
+              >
             </li>
             <li class="server__types-card__list-item">
               <h2 class="server__types-card__title">Выделенные серверы</h2>
@@ -166,7 +376,12 @@
                 предоставляется отдельная физическая машина
               </p>
               <p class="server__types-card__price">от 2150 ₽</p>
-              <a href="#" class="server__types-card__more-details">Подробнее</a>
+              <a
+                href="#"
+                class="server__types-card__more-details"
+                data-tariff="dedicated"
+                >Подробнее</a
+              >
             </li>
             <li class="server__types-card__list-item">
               <h2 class="server__types-card__title">Размещение серверов</h2>
@@ -175,7 +390,12 @@
                 размещения сервера в центре хранения и обработки информации
               </p>
               <p class="server__types-card__price">от 720 ₽</p>
-              <a href="#" class="server__types-card__more-details">Подробнее</a>
+              <a
+                href="#"
+                class="server__types-card__more-details"
+                data-tariff="colocation"
+                >Подробнее</a
+              >
             </li>
           </ul>
         </div>
@@ -451,5 +671,75 @@
         </div>
       </div>
     </footer>
+
+    <div class="overlay__modal" id="modalOverlay"></div>
+    <div class="modal" id="configModal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2 class="modal__title">Выберите конфигурацию сервера</h2>
+          <button class="modal__close" id="closeModal">x</button>
+        </div>
+        <div class="calculator__main">
+          <h3 class="calculator__row-title">Основные характеристики</h3>
+          <div class="calculator__row">
+            <div class="calculator__row-column__select">
+              <label class="calculator__label">Процессор:</label>
+              <select class="calculator__select" id="cpu">
+                <option value="0">Intel Xeon E3 (базовый) — 0 ₽</option>
+                <option value="2000">Intel Xeon E5 (средний) — 2000 ₽</option>
+                <option value="5000">AMD EPYC (топ) — 5000 ₽</option>
+              </select>
+            </div>
+            <div class="calculator__row-column__select">
+              <label class="calculator__label">Оперативная память:</label>
+              <select class="calculator__select" id="ram">
+                <option value="0">8 GB — 0 ₽</option>
+                <option value="1500">16 GB — 1500 ₽</option>
+                <option value="3500">32 GB — 3500 ₽</option>
+              </select>
+            </div>
+            <div class="calculator__row-column__select">
+              <label class="calculator__label">Диск:</label>
+              <select class="calculator__select" id="disk">
+                <option value="0">SSD 120 GB — 0 ₽</option>
+                <option value="2000">>SSD 512 GB — 2000 ₽</option>
+                <option value="5000">NVMe 1 TB — 5000 ₽</option>
+              </select>
+            </div>
+          </div>
+          <h3 class="calculator__row-title">Дополнительные услуги</h3>
+          <div class="calculator__row">
+            <div class="calculator__checkbox-group">
+              <div
+                class="calculator__checkbox-item calculator__checkbox-item-1"
+              >
+                <input type="checkbox" id="backup" value="1000" />
+                <label for="backup">Бэкапы (+1000 ₽)</label>
+              </div>
+              <div
+                class="calculator__checkbox-item calculator__checkbox-item-2"
+              >
+                <input type="checkbox" id="ddos" value="2000" />
+                <label for="ddos">DDoS-защита (+2000 ₽)</label>
+              </div>
+              <div
+                class="calculator__checkbox-item calculator__checkbox-item-3"
+              >
+                <input type="checkbox" id="support" value="1500" />
+                <label for="support">Расширенная поддержка (+1500 ₽)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <div class="calculator__total">
+            <span class="calculator__total-text">Итого:</span>
+            <span class="calculator__total-price" id="totalPrice">250 ₽</span>
+          </div>
+          <a href="#" class="button__buy"> Приобрести </a>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

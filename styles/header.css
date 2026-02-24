@@ -1,0 +1,152 @@
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 45px;
+}
+
+.body {
+  font-family: var(--main-fonts);
+  color: var(--black);
+  font-weight: var(--main-weight);
+}
+
+/* Tagline */
+
+.tagline {
+  background-color: var(--black);
+}
+
+.text-tagline {
+  color: var(--white);
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+/* Header logo */
+
+.header {
+  border-bottom: 1px solid #ddd;
+}
+
+.header .container {
+  padding: 20px 45px;
+  display: flex;
+  align-items: center;
+  gap: 75px;
+}
+
+.logo {
+  display: flex;
+  gap: 12px;
+  font-family: var(--second-fonts);
+}
+
+.logo__mark {
+  background-color: var(--blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: var(--weight-bold);
+  color: var(--white);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.logo__name-part {
+  font-weight: var(--weight-medium);
+  line-height: 18px;
+  font-size: 20px;
+}
+
+.logo__name-first {
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.logo__name-last {
+  color: var(--blue);
+}
+
+/* Header nav */
+
+.nav__list {
+  display: flex;
+  gap: 30px;
+}
+
+.nav__list-item-arrow {
+  display: flex;
+  gap: 9.5px;
+}
+
+.nav__list-item {
+  font-size: 14px;
+}
+
+.svg__arrow-down,
+.svg__arrow-down-address {
+  width: 7px;
+}
+
+/* Header contacts */
+
+.header__address {
+  font-family: var(--second-fonts);
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  min-width: 140px;
+
+  cursor: pointer;
+}
+
+.city-selector__dropdown {
+  position: absolute;
+  top: 100%; /* сразу под текущим городом */
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  display: none;
+}
+
+.city-selector__dropdown li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.city-selector__dropdown.show {
+  display: block;
+}
+
+.svg__arrow-down-address {
+  margin-left: 3px;
+  margin-bottom: 2px;
+}
+
+.header__phone {
+  text-decoration: none;
+  color: var(--blue);
+  font-size: 16px;
+}
+
+.log-in {
+  display: flex;
+  gap: 14.5px;
+}
+
+.log-in__link {
+  font-size: 14px;
+  color: var(--blue);
+}
